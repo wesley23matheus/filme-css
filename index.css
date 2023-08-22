@@ -1,0 +1,159 @@
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-size: 100% 100%; /* Faz a imagem ocupar toda a tela */
+  background-position: center;
+  background-attachment: fixed;
+  overflow: hidden;
+}
+
+.background{
+  background-color: black;
+  width: 100vw;
+  height: 100vh;
+
+}
+
+.content {
+  line-height: 2px;
+  position: relative;
+  text-align: center;
+  color: white;
+  z-index: 3; /*Colocar o conteúdo acima da camada preta e do foguete */
+  animation: rocketAppearAnimation 1s forwards 4s;
+  opacity: 0; 
+  z-index: 2;
+}
+.img3{
+  width: 200px;
+  height: 200px;
+  animation: pingpong 8s linear forwards; 
+}
+
+.img4{
+  width:300px;
+  height: 300px;
+  animation: rotate 8s linear forwards;
+}
+
+
+.animation1 {
+  font-size:50px;
+  opacity: 0;
+  animation: textAppearAnimation 6s forwards 4s, colorBlink 4s infinite;
+}
+ .animation2{
+  font-size: 25px;
+  margin: 0.1rem;
+ animation: textAppearAnimation 6s forwards 4s,colorBlink 4s infinite;
+
+ }
+ .animation3 {
+  padding: 20px;
+  font-size: 25px;
+  margin: 0.1rem;
+   animation: textAppearAnimation 6s forwards 4s,colorBlink 4s infinite; /* Aplicar a animação no texto */
+}
+
+/* Camada preta para animação */
+.principal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0;
+  z-index: 1;
+  animation: overlayAnimation 10s forwards;
+}
+
+@keyframes overlayAnimation {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.rocket {
+  width: 400px;
+  height: 400px;
+  position: relative;
+  animation: rocketAppearAnimation 1s forwards 4s;
+  opacity: 0; /* Começa invisível */
+  z-index: 2; /* Colocar o foguete acima da camada preta */
+}
+@keyframes rocketAppearAnimation {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes textAppearAnimation {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) rotate(-80deg); /* Rotação de -45 graus */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) rotate(0deg); /* Rotação de 0 grau */
+  }
+}
+  @keyframes colorBlink {
+    0%, 100% {
+      color: red; /* Primeira cor */
+    }
+    50% {
+      color: blue; /* Segunda cor */
+    }
+  }
+ 
+  @keyframes pingpong {
+    0%, 100% {
+      transform: rotate(0deg); /* Rotação inicial e final de 0 graus */
+      opacity: 1;
+    }
+    50% {
+      transform: rotate(45deg); /* Rotação no meio da animação, a 180 graus */
+      opacity: 0;
+    }
+  }
+  
+  
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
